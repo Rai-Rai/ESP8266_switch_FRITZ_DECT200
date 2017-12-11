@@ -1,5 +1,5 @@
 # Let the ESP8266 switch your FRITZ!DECT200 socket
-This is my first Arduino sketch and is based on an [article](http://www.open4me.de/index.php/2016/10/fritzbox-esp8266-laesst-telefon-klingeln/) by Sven Bursch-Osewold (@littleyoda).
+This is my first Arduino sketch and is based on an [article](http://www.open4me.de/index.php/2016/10/fritzbox-esp8266-laesst-telefon-klingeln/) by [Sven Bursch-Osewold](https://github.com/littleyoda).
 
 ## Hardware
 I'm using this sketch on a [D1 mini](https://www.amazon.de/gp/product/B06XPCR921/) clone in conjunction with a FRITZ!Box 7490 running Fritz!OS 06.92 and a FRITZ!DECT200 actor version 03.87.
