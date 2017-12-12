@@ -8,6 +8,6 @@ I'm using this sketch on a [D1 mini](https://www.amazon.de/gp/product/B06XPCR921
 ## Configuration
 For using this sketch you just have to enter your Wi-Fi details, a FRITZ!Box user that is allowed to change smart home settings (I recommend to setup one for this use, just in case disaster strikes), and the AIN of the FRITZ!DECT200 socket you want to switch. The latter one can be found in the smart home section of the FRITZ!Box.
 
-Optional you can also disable the use of DHCP and configure the network preferences manually. I did this to deny internet access to the ESP8266 in my Fritz!Box and assign an IP I want, but for just denying internet access to the device you can also let the FRITZ!Box alway asign the same IP.
+Optionally you can also disable the use of DHCP and configure the network manually. I did this to deny internet access to the ESP8266 in my Fritz!Box and assign an IP I want, but for just denying internet access to the device you can also let the FRITZ!Box alway asign the same IP.
 
 
