@@ -1,23 +1,23 @@
 /*  ESP8266_switch_Fritz_DECT200
- *  Copyright (C) 2017 Eike Benedikt Lotz
- *
- *  This program is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- * 
- *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
- *  
- *  By courtesy of Sven Bursch-Osewold:
- *  <http://www.open4me.de/index.php/2016/10/fritzbox-esp8266-laesst-telefon-klingeln/>
- *  Copyright (C) 2016 Sven Bursch-Osewold
- */
+    Copyright (C) 2017 Eike Benedikt Lotz
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+    By courtesy of Sven Bursch-Osewold:
+    <http://www.open4me.de/index.php/2016/10/fritzbox-esp8266-laesst-telefon-klingeln/>
+    Copyright (C) 2016 Sven Bursch-Osewold
+*/
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 // Wi-Fi network details
@@ -63,6 +63,9 @@ char* task;
 void setup() {
   // Open serial connection
   Serial.begin(115200);
+
+  WiFi.mode(WIFI_STA);
+  WiFi.persistent(true); // Memorise WiFi connection settings instead of always writing them to flash also when there was no change
 
   // Set hostname of this device
   WiFi.hostname(WiFi_hostname);
@@ -188,6 +191,9 @@ void loop() {
     }
     else {
       Serial.println("Tried switching " + String(task) + " " + String(counter) + " times");
+    }
+    if (counter == iterations) {
+      WiFi.disconnect();
     }
   }
 }
